@@ -18,7 +18,7 @@ function Movement(fecha, hora, operacion, monto, saldo) {
 const movement1 = new Movement(
   "14/07/2022",
   "15:55",
-  "Deposito",
+  "Depósito",
   "$ 15.000.00",
   "$ 125.343.00"
 );
@@ -32,50 +32,50 @@ const movement2 = new Movement(
 const movement3 = new Movement(
   "17/07/2022",
   "12:18",
-  "Transferencia",
+  "Depósito",
   "$ 20.000.00",
   "$ 115.343.00"
 );
 
 //Consultar pagos
-function Pagos(fecha, hora, servicio, monto, estado) {
-  this.fecha = fecha.toUpperCase;
+function Payments(fecha, hora, operacion, monto, saldo) {
+  this.fecha = fecha;
   this.hora = hora;
-  this.servicio = servicio;
+  this.operacion = operacion;
   this.monto = monto;
-  this.estado = estado;
+  this.saldo = saldo;
 }
 
 //Pagos
-const pago1 = new Pagos(
+const pago1 = new Payments(
   "25/06/2022",
   "11:25",
-  "Edelap S.A",
-  "2.572.27",
-  "Aprobada"
+  "Edelap",
+  "$ 2.572.27",
+  "130.253.65"
 );
 
-const pago2 = new Pagos(
+const pago2 = new Payments(
   "07/07/2022",
   "10:33",
   "Camuzzi Gas Pampeana",
-  "5.362.87",
-  "Aprobada"
+  "$ 5.362.87",
+  "127.156.65"
 );
 
-const pago3 = new Pagos(
+const pago3 = new Payments(
   "21/07/2022",
   "08:55",
-  "Arba Inmobiliario",
-  "1.942.63",
-  "Aprobada"
+  "ARBA Inmobiliario",
+  "$ 1.942.63",
+  "$ 122.165.36"
 );
 
 //Consultar Transferencias
-function Transfer(fecha, hora, tipo, monto, saldo) {
+function Transfer(fecha, hora, operacion, monto, saldo) {
   this.fecha = fecha;
   this.hora = hora;
-  this.tipo = tipo;
+  this.operacion = operacion;
   this.monto = monto;
   this.saldo = saldo;
 }
@@ -84,44 +84,51 @@ function Transfer(fecha, hora, tipo, monto, saldo) {
 const transfer1 = new Transfer(
   "14/07/2022",
   "15:55",
-  "Transferencia Recibida",
+  "Trans. Recibida",
   "$ 15.000.00",
   "$ 125.343.00"
 );
 const transfer2 = new Transfer(
   "15/07/2022",
   "12:34",
-  "Transferencia Realizada",
+  "Trans. Enviada ",
   "$ 30.000.00",
   "$ 95.343.00"
 );
 const transfer3 = new Transfer(
   "17/07/2022",
   "12:18",
-  "Transferencia recibida",
+  "Trans. Recibida",
   "$ 20.000.00",
   "$ 115.343.00"
 );
 
+//Creación array
+const operaciones = [];
+
+//Agregar objetos al array
+
+operaciones.push(movement1, movement2, movement3);
+operaciones.push(pago1, pago2, pago3);
+operaciones.push(transfer1, transfer2, transfer3);
+
+
 //Función últimos movimientos
 function mostrarMovimientos() {
- alert("Movimiento 1 de 3 " + JSON.stringify (movement1, null, 4));
- alert("Movimiento 2 de 3 " + JSON.stringify (movement2, null, 4));
- alert("Movimiento 3 de 3 " + JSON.stringify (movement3, null, 4));
+  console.table(operaciones);
+
 }
 
 //Función pagos
 function mostrarPagos() {
-  alert("Operación 1 de 3 " + JSON.stringify (pago1, null, 4));
-  alert("Operación 2 de 3 " + JSON.stringify (pago2, null, 4));
-  alert("Operación 3 de 3 " + JSON.stringify (pago3, null, 4));
+  console.table(operaciones.pago1);
 }
 
 //Funcion Transferencia
 function mostrarTransfer() {
-  alert("Transferencia 1 de 3 " + JSON.stringify (pago1, null, 4));
-  alert("Transferencia 2 de 3 " + JSON.stringify (pago2, null, 4));
-  alert("Transferencia 3 de 3 " + JSON.stringify (pago3, null, 4));
+  alert("Transferencia 1 de 3 " + JSON.stringify(transfer1, null, 4));
+  alert("Transferencia 2 de 3 " + JSON.stringify(transfer2, null, 4));
+  alert("Transferencia 3 de 3 " + JSON.stringify(transfer3, null, 4));
 }
 
 //Funcion nueva operacion
