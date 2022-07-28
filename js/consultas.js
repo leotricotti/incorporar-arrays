@@ -103,32 +103,34 @@ const transfer3 = new Transfer(
   "$ 115.343.00"
 );
 
-//Creación array
+//Creación array movimientos
 const operaciones = [];
-
-//Agregar objetos al array
-
 operaciones.push(movement1, movement2, movement3);
 operaciones.push(pago1, pago2, pago3);
 operaciones.push(transfer1, transfer2, transfer3);
 
+//Array pagos
+
+const pagoServ = [];
+pagoServ.push(pago1, pago2, pago3);
+
+//Array transfererencias
+const transferido = [];
+transferido.push(transfer1, transfer2, transfer3);
 
 //Función últimos movimientos
 function mostrarMovimientos() {
   console.table(operaciones);
-
 }
 
 //Función pagos
 function mostrarPagos() {
-  console.table(operaciones.pago1);
+  console.table(pagoServ);
 }
 
 //Funcion Transferencia
 function mostrarTransfer() {
-  alert("Transferencia 1 de 3 " + JSON.stringify(transfer1, null, 4));
-  alert("Transferencia 2 de 3 " + JSON.stringify(transfer2, null, 4));
-  alert("Transferencia 3 de 3 " + JSON.stringify(transfer3, null, 4));
+  console.table(transferido);
 }
 
 //Funcion nueva operacion
