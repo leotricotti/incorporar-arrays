@@ -113,7 +113,7 @@ transferido.push(transfer1, transfer2, transfer3);
 
 //Creación array movimientos
 const operaciones = pagoServ.concat(transferido);
-operaciones.push(movement1, movement2, movement3);
+operaciones.unshift(movement1, movement2, movement3);
 
 
 //Función últimos movimientos
