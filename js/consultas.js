@@ -16,21 +16,21 @@ function Movement(fecha, hora, operacion, monto, saldo) {
 
 //Base datos movimientos
 const movement1 = new Movement(
-  "14/07/2022",
+  "01/07/2022",
   "15:55",
   "Depósito",
   "$ 15.000.00",
   "$ 125.343.00"
 );
 const movement2 = new Movement(
-  "15/07/2022",
+  "03/07/2022",
   "12:34",
   "Extracción",
   "$ 30.000.00",
   "$ 95.343.00"
 );
 const movement3 = new Movement(
-  "17/07/2022",
+  "05/07/2022",
   "12:18",
   "Depósito",
   "$ 20.000.00",
@@ -48,23 +48,23 @@ function Payments(fecha, hora, operacion, monto, saldo) {
 
 //Pagos
 const pago1 = new Payments(
-  "25/06/2022",
+  "08/07/2022",
   "11:25",
   "Edelap",
   "$ 2.572.27",
-  "130.253.65"
+  "$ 130.253.65"
 );
 
 const pago2 = new Payments(
-  "07/07/2022",
+  "10/07/2022",
   "10:33",
   "Camuzzi Gas Pampeana",
   "$ 5.362.87",
-  "127.156.65"
+  "$ 127.156.65"
 );
 
 const pago3 = new Payments(
-  "21/07/2022",
+  "13/07/2022",
   "08:55",
   "ARBA Inmobiliario",
   "$ 1.942.63",
@@ -89,14 +89,14 @@ const transfer1 = new Transfer(
   "$ 125.343.00"
 );
 const transfer2 = new Transfer(
-  "15/07/2022",
+  "17/07/2022",
   "12:34",
   "Trans. Enviada ",
   "$ 30.000.00",
   "$ 95.343.00"
 );
 const transfer3 = new Transfer(
-  "17/07/2022",
+  "20/07/2022",
   "12:18",
   "Trans. Recibida",
   "$ 20.000.00",
@@ -110,7 +110,6 @@ operaciones.push(pago1, pago2, pago3);
 operaciones.push(transfer1, transfer2, transfer3);
 
 //Array pagos
-
 const pagoServ = [];
 pagoServ.push(pago1, pago2, pago3);
 
